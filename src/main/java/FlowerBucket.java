@@ -1,9 +1,6 @@
 import java.util.ArrayList;
 
-public class FlowerBucket {
-    // add flower pack
-    // get price
-
+public class FlowerBucket extends Item{
     private ArrayList<FlowerPack> flowerPacks = new ArrayList<FlowerPack>();
 
     public void addPack(FlowerPack pack){
@@ -14,10 +11,14 @@ public class FlowerBucket {
         return flowerPacks;
     }
 
+    public String getDescription(){
+        return "Bucket+";
+    }
+
     public double getPrice(){
         double price = 0;
-        for (int i = 0; i < flowerPacks.size(); i++){
-            price += flowerPacks.get(i).getPrice();
+        for (FlowerPack flowerPack : flowerPacks) {
+            price += flowerPack.getPrice();
         }
         return price;
     }
