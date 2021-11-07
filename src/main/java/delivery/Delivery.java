@@ -1,5 +1,5 @@
 package delivery;
 
 public interface Delivery {
-    public void deliver();
+    public String deliver();
 }
